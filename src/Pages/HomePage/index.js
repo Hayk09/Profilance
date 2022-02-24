@@ -17,7 +17,7 @@ const HomePage = () => {
     console.log(filters[0].title.toLowerCase() )
     return (
         <>
-            <div className='search_container'>
+            <div >
                 <input placeholder='search'  className='search' onChange={(e)=>setValue(e.target.value)} />
             </div>
             <div className='container'>

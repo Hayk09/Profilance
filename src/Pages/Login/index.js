@@ -6,8 +6,8 @@ import "./login.scss"
 
 
 const Login = () => {
-  const [userpassword, setUserpassword] = useState('')
-  const [useremail, setUseremail] = useState('')
+  // const [userpassword, setUserpassword] = useState('')
+  // const [useremail, setUseremail] = useState('')
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState()
   const {
@@ -16,17 +16,18 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-
+  
   const history = useHistory();
 
-  const submit = () => {
+  const submit = (data) => {
     try {
-      window.localStorage.setItem( 'user', {userpassword: userpassword, useremail: useremail})
-      const data = JSON.parse(window.localStorage.getItem('user'))
+      window.localStorage.setItem( 'user',JSON.stringify(data))
+      // const data = JSON.parse(window.localStorage.getItem('user'))
+      // console.log(data);
+      // setUsers(data)
       console.log(data);
-      setUsers(data)
       
-      if(userpassword === 'hayksargsyan0909@gmail.com'){
+      if(data.email === 'hayksargsyan0909@gmail.com'){
         setLoading(true);
         history.push("/admin");
       } else {
@@ -39,7 +40,7 @@ const Login = () => {
       console.log("error signing in", e);
     }
   };
-console.log(users,'users');
+
 
   return (
     <div className="login">
@@ -49,14 +50,14 @@ console.log(users,'users');
        type='email'
         placeholder="email"
         isInvalid={!!errors.email}
-        onChange={(e) => ( setUseremail(e.target.value))}
+        // onChange={(e) =>  setUseremail(e.target.value)}
         {...register("email", { required: true })}
       />
         <input
         type="password"
         placeholder="password"
         isInvalid={!!errors.password}
-        onChange={(e) => ( setUserpassword(e.target.value))}
+        // onChange={(e) => setUserpassword(e.target.value)}
         {...register("password", { required: true })}
       />
       
