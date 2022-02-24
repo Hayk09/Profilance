@@ -5,15 +5,15 @@
 .container {
     display: inline-grid;
     grid-template-columns: auto auto auto;
-    padding: 10px;
+    // padding: 10px;
     
    .grid_item {
     display: grid;
     grid-template-columns: auto auto auto;
     // background-color: #2196F3;
-    padding: 10px;
+        // padding: 10px;
        margin-top: 6rem;
-       margin-left: 4rem;
+    //    margin-left: 4rem;
  
  
        .img{
@@ -33,17 +33,13 @@
    }
 }
 
-.search_container {
+.search {
    display: flex;
+   height: 20px;
+   width: 150px;
    justify-content: center;
    margin-right: 2rem;
    margin-top: 2rem;
-    .button_news{
-        margin-top: 1rem;
-        background-color: black;
-        color: red;
-        border-radius: 5px;
-        margin-left: 2rem;
-    }
+    
 }
 
