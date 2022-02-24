@@ -1,0 +1,19 @@
+
+$nabar-background-color:#229594 ;
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 25px;  
+    padding-top: 20px;
+
+    height: 50px;
+    background-color:$nabar-background-color ;
+   .link {
+       display:flex;
+       margin-right: 40px;
+    //    letter-spacing: 3px;
+       column-gap: 18px;
+       
+   }
+}
