@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
-import {useSelector, useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid';
 import "./news.scss"
 
 const News = () => {
-  const [title, setTitle] = useState('')
-  const [description,setDescription] = useState('')
-  const [file,setFile] = useState([])
-  const [loading, setLoading] = useState(false)
   const {
     register,
     handleSubmit,
@@ -17,28 +14,16 @@ const News = () => {
   const dispatch = useDispatch()
   const history = useHistory();
 
-console.log(file)
 
-  const submit =  async (data) => {
+
+  const submit = async (data) => {
+    data.activity = false
+    data.id = uuidv4()
+    // data.time = new.Date().toDateString()
     try {
-      dispatch({type: 'EDIT', payload: {
-        id: Math.random(),
-        title: title,
-        description: description,
-        avatar: file,
-        activity: false
-      }})
-      window.localStorage.setItem('news', JSON.stringify( {
-        id: Math.random(),
-        title: title,
-        description: description,
-        avatar: file,
-        activity: false
-      }))
-      setLoading(true);
-      history.push("/admin");
+      dispatch({ type: 'EDIT', payload: { ...data } })
+      history.push("/user");
     } catch (e) {
-      setLoading(false);
       console.log("error signing in", e);
     }
   };
@@ -48,31 +33,23 @@ console.log(file)
   return (
     <div className='container'>
       <form className='form' noValidate onSubmit={handleSubmit(submit)}>
-      <p className='text'> добавить новость</p>
-        <input 
-          type='text' 
-          placeholder='title'  
-          isInvalid={!!errors.title}
-         
-          onChange={(e) => ( setTitle(e.target.value))}
-         />
-        <input 
-        type='text' 
-        placeholder='description'  
-        isInvalid={!!errors.description}
-        onChange={(e) => ( setDescription(e.target.value))}
-       />
-         <input 
-          type='file' 
-          placeholder='file'  
-          isInvalid={!!errors.file}
-         
-          onChange={(e) => ( setFile(e.target.value))}
-         />
-        <button className='button' isLoading={loading} type="submit" > добавить новость</button>
+        <p className='text'> добавить новость</p>
+        <input
+          type='text'
+          placeholder='title'
+          {...register("title", { required: true })}
+        />
+        <input
+          type='text'
+          placeholder='description'
+          {...register("description", { required: true })}
+        />
+        <button
+          className='button'
+          type="submit" >
+          добавить новость
+        </button>
       </form>
-   
-      {/* {value} */}
     </div>
   )
 }

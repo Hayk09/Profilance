@@ -1,7 +1,7 @@
 import React, { useEffect }  from "react";
 import { Route as ReactRout, useHistory } from 'react-router-dom'
-import { useUser } from '../hooks'
-import { useAdmin } from "../hooks";
+// import { useUser } from '../hooks'
+
 
 const Route = ({
     path,
@@ -10,22 +10,17 @@ const Route = ({
     secure,
     component,
 }) => {
-    const { user, loading } = useUser()
-    const {admin } = useAdmin()
-    const history = useHistory()
+    // const { user, loading } = useUser()
+    // const history = useHistory()
 
-    useEffect(() => {
-        if (user && secure && !loading) {
-            history.push('/')
-        }
-         if(admin && secure) {
-            history.push('./admin') 
-        }
+    // useEffect(() => {
+    //     if (user && secure && !loading) {
+    //         history.push('/')
+    //     }
        
-        
-    }, [user,admin])
+    // }, [user])
 
-    if (loading) return <>...loading</>
+    // if (loading) return <>...loading</>
 
     return (
         <Layout>

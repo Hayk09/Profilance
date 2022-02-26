@@ -1,5 +1,5 @@
 import AuthLayout from "../layouts/AuthLayout";
-import DefaultLayout from "../layouts/DefaultLayout";
+// import DefaultLayout from "../layouts/DefaultLayout";
 import Homepage from "./HomePage";
 import News from './News'
 import Login from './Login'
