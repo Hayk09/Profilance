@@ -44,6 +44,7 @@ const News = () => {
           placeholder='description'
           {...register("description", { required: true })}
         />
+        <textarea />
         <button
           className='button'
           type="submit" >
