@@ -5,72 +5,77 @@ import "./login.scss"
 
 
 
-const Login = () => {
-  // const [userpassword, setUserpassword] = useState('')
-  // const [useremail, setUseremail] = useState('')
-  const [loading, setLoading] = useState(false);
-  const [users, setUsers] = useState()
+const Login = ({closeModal}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  
+
   const history = useHistory();
 
   const submit = (data) => {
     try {
-      window.localStorage.setItem( 'user',JSON.stringify(data))
-      // const data = JSON.parse(window.localStorage.getItem('user'))
-      // console.log(data);
-      // setUsers(data)
-      console.log(data);
-      
-      if(data.email === 'hayksargsyan0909@gmail.com'){
-        setLoading(true);
+      window.localStorage.setItem('user', JSON.stringify(data))
+      if (data.email === 'admin@gmail.com') {
         history.push("/admin");
       } else {
-        setLoading(true)
         history.push('/user')
       }
-     
+
     } catch (e) {
-      setLoading(false);
       console.log("error signing in", e);
     }
   };
 
 
   return (
-    <div className="login">
-       <form className="form" noValidate onSubmit={handleSubmit(submit)}>
-         <p className="text">Login</p>
-       <input
-       type='email'
-        placeholder="email"
-        isInvalid={!!errors.email}
-        // onChange={(e) =>  setUseremail(e.target.value)}
-        {...register("email", { required: true })}
-      />
-        <input
-        type="password"
-        placeholder="password"
-        isInvalid={!!errors.password}
-        // onChange={(e) => setUserpassword(e.target.value)}
-        {...register("password", { required: true })}
-      />
-      
-      <button isLoading={loading} type="submit" className="button_log">
-        Log In
-      </button>
-      <Link to="/register">
-        <button className="button" >Create New Account</button>
-      </Link>
 
-       </form>
+    <div className='modalBackgorund'>
+      <div className='modalContainer'>
+        <button 
+          onClick={() => closeModal(false)}
+          className='closeModalBtn'> X </button>
+        <div className='title'>
+          <h2 >Ты уверен, что хочешь продолжить? Авторизоваться?</h2>
+          <div >
+            <div>
+              <form className="form"  noValidate onSubmit={handleSubmit(submit)}>
+                <h2 className="text">Вход</h2>
+                <input
+                  type='email'
+                  placeholder="email"
+                  {...register("email", { required: true })}
+                />
+                <input
+                  type="password"
+                  placeholder="password"
+                  {...register("password", { required: true })}
+                />
+                <button type="submit" className="button_log">
+                  Вход
+                </button>
+                <button  className="button_log" onClick={()=> history.push('/')}>
+                  Выход
+                </button>
+                
+                  <button className="button" > регистрация </button>
+                  <button onClick={() => closeModal(false)}>отменить</button>
+              </form>
+            </div>
 
+  
+          </div>
+        </div>
+      </div>
     </div>
+
+
+
+
+
+
   );
 };
 

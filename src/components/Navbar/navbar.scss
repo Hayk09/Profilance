@@ -1,19 +1,18 @@
 
 $nabar-background-color:#229594 ;
 .block {
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-left: 25px;  
-    padding-top: 20px;
-
-    height: 50px;
+    justify-content: space-around;
     background-color:$nabar-background-color ;
-   .link {
-       display:flex;
-       margin-right: 40px;
-    //    letter-spacing: 3px;
-       column-gap: 18px;
-       
-   }
+      .openModalBtn{
+          background-color: #229594;
+          cursor: pointer;
+          color: rgb(32, 5, 133);
+          border-radius: 6px;
+          font-size: 14px;
+      } 
+   
 }
