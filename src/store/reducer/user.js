@@ -1,12 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
+import moment from 'moment';
+
 const initialState = {
     news: [
-        { id: uuidv4(), title: 'Sputnik Армения', description: 'Путин обсудил с Пашиняном ситуацию вокруг Нагорного Карабаха', avatar: "https://cdnn1.img.armeniasputnik.am/img/2344/77/23447704_0:0:1600:901_1920x0_80_0_0_8a2da7a23ca0fa2865a68770dec2ef5c.jpg.webp", activity: true },
-        { id: uuidv4(), title: 'Yerevan', description: 'Стало известно, куда россияне собираются поехать на отдых весной', avatar: "https://cdnn1.img.armeniasputnik.am/img/07e5/0a/08/34077946_0:33:1600:934_1920x0_80_0_0_1308eacfb7e5a1339b46c0de372f2260.jpg.webp", activity: true },
-        { id: uuidv4(), title: 'Новости ', description: 'Текст обращения Владимира Путина к россиянам и соотечественникам на Украине', avatar: "https://cdnn1.img.armeniasputnik.am/img/07e6/02/16/38973609_0:104:1600:1004_1920x0_80_0_0_8377f92321f5aa05ebc5041dc95798b1.jpg", activity: true },
-        { id: uuidv4(), title: 'Sputnik Армения', description: 'Путин обсудил с Пашиняном ситуацию вокруг Нагорного Карабаха', avatar: "https://gdb.rferl.org/6A1A0164-2FB3-42FD-9602-49C8E71E06B3_w1023_r1_s.jpg", activity: true },
-        { id: uuidv4(), title: 'Azatutyun', description: 'Стало известно, куда россияне собираются поехать на отдых весной', avatar: "https://gdb.rferl.org/995ac546-4469-4008-918c-3c292902f138_w1023_r1_s.jpg", activity: true },
-        { id: uuidv4(), title: 'Armenia Новости ', description: 'Текст обращения Владимира Путина к россиянам и соотечественникам на Украине', avatar: "https://gdb.rferl.org/1F340E23-B7F0-48BC-AF66-D254C7ABD4B0_w1023_r1_s.jpg", activity: true }
+        { id: uuidv4(), title:  'Sputnik Армения', time: moment().format("DD-MM-YYYY hh:mm:ss"), description: 'Путин обсудил с Пашиняном ситуацию ...', avatar: "https://cdnn1.img.armeniasputnik.am/img/2344/77/23447704_0:0:1600:901_1920x0_80_0_0_8a2da7a23ca0fa2865a68770dec2ef5c.jpg.webp", activity: true },
+        { id: uuidv4(), title: 'Yerevan',time: moment().format("DD-MM-YYYY hh:mm:ss"), description: 'Стало известно, куда россияне собираются поехать... ', avatar: "https://cdnn1.img.armeniasputnik.am/img/07e5/0a/08/34077946_0:33:1600:934_1920x0_80_0_0_1308eacfb7e5a1339b46c0de372f2260.jpg.webp", activity: true },
+        { id: uuidv4(), title: 'Новости ', time: moment().format("DD-MM-YYYY hh:mm:ss"), description: 'Текст обращения Владимира Путина к россиянам ...', avatar: "https://cdnn1.img.armeniasputnik.am/img/07e6/02/16/38973609_0:104:1600:1004_1920x0_80_0_0_8377f92321f5aa05ebc5041dc95798b1.jpg", activity: true },
+        { id: uuidv4(), title: 'Sputnik Армения',time: moment().format("DD-MM-YYYY hh:mm:ss"), description: 'Путин обсудил с Пашиняном ситуацию вокруг Нагорного Карабаха...', avatar: "https://gdb.rferl.org/6A1A0164-2FB3-42FD-9602-49C8E71E06B3_w1023_r1_s.jpg", activity: true },
+        { id: uuidv4(), title: 'Azatutyun',time: moment().format("DD-MM-YYYY hh:mm:ss"), description: 'Стало известно, куда россияне собираются поехать ...', avatar: "https://gdb.rferl.org/995ac546-4469-4008-918c-3c292902f138_w1023_r1_s.jpg", activity: true },
+        { id: uuidv4(), title: 'Armenia Новости ',time: moment().format("DD-MM-YYYY hh:mm:ss"), description: 'Текст обращения Владимира Путина к россиянам...', avatar: "https://gdb.rferl.org/1F340E23-B7F0-48BC-AF66-D254C7ABD4B0_w1023_r1_s.jpg", activity: true }
     ]
 
 }

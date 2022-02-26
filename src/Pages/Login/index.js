@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./login.scss"
 
 
@@ -56,7 +56,10 @@ const Login = ({closeModal}) => {
                 <button type="submit" className="button_log">
                   Вход
                 </button>
-                <button  className="button_log" onClick={()=> history.push('/')}>
+                <button  className="button_log" onClick={()=> (
+                  window.localStorage.removeItem('user'),
+                  history.push('/')
+                )}>
                   Выход
                 </button>
                   <button className="button-reg" onClick={() => history.push('/register')} > регистрация </button>

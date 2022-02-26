@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import "./admin.scss"
 
@@ -17,10 +16,10 @@ const Admin = () => {
   }
   const onSave = (id) => {
     dispatch({
-      type: 'CREATE', payload:{
+      type: 'CREATE', payload: {
         id: id
-      } 
-      })
+      }
+    })
     // const data = JSON.parse(window.localStorage.getItem('news' ))
     //  data.activity = true
     //  console.log(data)
@@ -42,29 +41,32 @@ const Admin = () => {
         </Link>
         <input placeholder='search' className='search' onChange={onChange} />
       </div> */}
-      <div className='container'>
+      <div className='grid_item'>
         {
           user?.map((item) => (
             item.activity === true ? (
-              <div className='grid_item' key={item.id}>
-                <img src={item.avatar} className='img' />
-                <div className='text'>
-                  <p>{item.title}</p>
-                  <p>{item.description}</p>
+              <div key={item.id}>
+                <div>
+                <button onClick={() => onDelete(item.id)} className='bttn'>X</button>
+                  <img src={item.avatar} className='img' />
+                  <p className="time">{item.time}</p>
+                  <p className="title">{item.title}</p>
+                  <p className="description">{item.description}</p>
                 </div>
-                <button onClick={()=> onDelete(item.id)} className='bttn'>X</button>
+               
               </div>
             ) : (
-              <div className='grid_item' key={item.id}>
-                <img src={item.avatar} className='img' />
-                <div className='text'>
-                  <p>{item.title}</p>
-                  <p>{item.description}</p>
+              <div key={item.id}>
+                <img src={item.avatar}  />
+                <div >
+                  <p className="time">{item.title}</p>
+                  <p className="title">{item.description}</p>
+                  <p className="description">{item.time}</p>
                 </div>
-                <button onClick={onSave}  className='bttn1'>&radic;</button>
+                <button onClick={onSave} className='bttn1' >&radic;</button>
                 <button onClick={onDelete} className='bttn'>X</button>
               </div>
-           )
+            )
 
           ))
         }
