@@ -10,61 +10,27 @@
        
    }
 }
-
-.container {
-    display: inline-grid;
-    // padding: 10px;
-    margin-right: 4rem;
-    
-   .grid_item {
+.grid_item{
     display: grid;
-    // grid-template-columns: auto auto auto;
-    // background-color: #2196F3;
-    //    margin-top: 1rem;
-    //    margin-right: 2rem;
-   
- 
- 
-       .img{
-           width: 300px;
-           height: 300px;
-       }
-       .text{
-           font-size: 15px;
-           margin-left: 2rem;
-           color:rgb(109, 53, 238);
-       }
-   }
-   .text{
-       color: red;
-       font-size: 35px;
-       text-align: center;
-   }
-}
-
-.search {
-   display: flex;
-   width: 200px;
-   justify-content: center;
-   margin-left: 5rem;
-   margin-top: 1rem;
-    
-}
-
-@media only screen and (max-width: 1024px) {
-    .container{
-        height: 800px;
-   }
-}
-@media only screen and (max-width: 768px) {
-    .container{
-        height: 600px;
-   }
-}
-@media only screen and (max-width: 640px) {
-    .grid_item{
-        grid-template-columns: auto;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 5%;
+    grid-column-gap: 1%;
+    background-color: rgb(164, 167, 164);
+    padding: 30px;
+    .img{
+        width: 400px;
         height: 300px;
-        width: 100%;
-   }
-}
+    }
+    .time{
+        color: rgb(90, 104, 230);
+        font-size: 12px;
+    }
+    .title{
+        font-size: 16px;
+        color: rgb(28, 13, 240);
+    }
+    .description{
+        font-size: 14px;
+        color:rgb(28, 13, 240);
+    }
+}   

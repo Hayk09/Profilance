@@ -1,53 +1,38 @@
 
-
-.container {
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-    
-   .grid_item {
+.grid_item{
     display: grid;
     grid-template-columns: auto auto auto;
-    // background-color: #2196F3;
-    padding: 10px;
-       margin-top: 4rem;
-       margin-left: 2rem;
- 
- 
-       .img{
-           width: 300px;
-           height: 200px;
-       }
-       .text{
-           font-size: 15px;
-           margin-left: 2rem;
-           color:rgb(109, 53, 238);
-       }
-       .bttn {
-           height: 25px;
-           width: 25px;
-           color: red;
-       }
-       .bttn1 {
+    grid-row-gap: 5%;
+    grid-column-gap: 1%;
+    background-color: rgb(164, 167, 164);
+    padding: 30px;
+    .img{
+        width: 400px;
+        height: 300px;
+    }
+    .time{
+        color: rgb(90, 104, 230);
+        font-size: 12px;
+    }
+    .title{
+        font-size: 16px;
+        color: rgb(28, 13, 240);
+    }
+    .description{
+        font-size: 14px;
+        color:rgb(28, 13, 240);
+    }
+    .bttn {
         height: 25px;
         width: 25px;
-        background-color: rgb(25, 207, 80);
-        border-radius: 5px;
-    }
-   }
-}
-
-.search_container {
-   display: flex;
-   justify-content:space-between;
-   margin-right: 2rem;
-   margin-top: 2rem;
-    .button_news{
-        margin-top: 1rem;
-        background-color: black;
         color: red;
-        border-radius: 5px;
-        margin-left: 2rem;
-    }
-}
+        border-radius: 2px;
+        position: absolute;
+        //  left: 10px;
+        // top: 1px;
 
+    }
+    .bttn1{
+        background-color: rgb(23, 209, 54);
+    }
+}   

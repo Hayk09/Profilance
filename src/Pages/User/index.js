@@ -22,21 +22,23 @@ const User = () => {
                 <Link to='/news'>
                     <button className='button_news'>добавить новость</button>
                 </Link>
-                <input placeholder='search' className='search' onChange={(e) => setValue(e.target.value)} />
+                <div>
+                    <input placeholder='search' className='search' onChange={(e) => setValue(e.target.value)} />
+                </div>
+
             </div>
-            <div className='container'>
+            <div className='grid_item' >
                 {
                     filters?.filter((item) => item?.title?.toLowerCase()
                         .includes(value?.toLocaleLowerCase())).map((item) => (
                             item.activity === true ? (
-                                <div className='grid_item' key={item.id}>
-                                    <img src={item.avatar} className='img' />
-                                    <div className='text'>
-                                        <p>{item.title}</p>
-                                        <p>{item.description}</p>
-                                        <p>{item.time}</p>
+                                <div key={item.id}>
+                                    <div>
+                                        <img src={item.avatar} className='img' />
+                                        <p className="time">{item.time}</p>
+                                        <p className="title">{item.title}</p>
+                                        <p className="description">{item.description}</p>
                                     </div>
-
                                 </div>
                             ) : (
                                 <div key={item.id}>
