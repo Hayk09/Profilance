@@ -59,9 +59,8 @@ const Login = ({closeModal}) => {
                 <button  className="button_log" onClick={()=> history.push('/')}>
                   Выход
                 </button>
-                
-                  <button className="button" > регистрация </button>
-                  <button onClick={() => closeModal(false)}>отменить</button>
+                  <button className="button-reg" onClick={() => history.push('/register')} > регистрация </button>
+                  <button className="button-cl" onClick={() => closeModal(false)}>отменить</button>
               </form>
             </div>
 
